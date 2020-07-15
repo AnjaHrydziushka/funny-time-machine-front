@@ -1,6 +1,7 @@
 import React from "react";
 import "./homepage.css";
 import { apiUrl } from "../../config/constants";
+import axios from "axios";
 
 export default function HomePage() {
   return (
