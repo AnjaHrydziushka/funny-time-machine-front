@@ -2,11 +2,15 @@ import React, { useEffect } from 'react';
 import { fetchFactsById } from '../store/facts/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { selectFact } from '../store/facts/selectors';
 
 export default function FactPage() {
 
     const dispatch = useDispatch();
     const { id } = useParams();
+    const factById = useSelector(selectFact);
+
+    console.log("Selector:", factById)
 
     useEffect(() => {
         dispatch(fetchFactsById(id))
