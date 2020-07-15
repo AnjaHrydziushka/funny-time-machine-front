@@ -83,7 +83,10 @@ export default function HomePage() {
           <Link
             to={{
               pathname: "/quiz",
-              state: { palceId: selectedLocation, periodId: selectedPeriod },
+              state: {
+                placeId: selectedLocation,
+                timePeriodId: selectedPeriod,
+              },
             }}
           >
             Submit
