@@ -2,8 +2,39 @@ import React from "react";
 import "./homepage.css";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
+  const [locations, setLocations] = useState([]);
+  const [periods, setPeriods] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedPeriod, setselectedPeriod] = useState("");
+
+  async function FetchLocation() {
+    const response = await axios.get(`${apiUrl}/places`);
+    console.log("places", response.data.places);
+    setLocations(response.data.places);
+  }
+
+  async function FetchPeriod() {
+    const response = await axios.get(`${apiUrl}/timeperiods`);
+    console.log("period", response.data.timePeriod);
+    setPeriods(response.data.timePeriod);
+  }
+
+  useEffect(() => {
+    FetchLocation();
+    FetchPeriod();
+  }, []);
+
+  if (!locations || !periods)
+    return (
+      <div>
+        <h2>Loading</h2>
+      </div>
+    );
+
   return (
     <div className="body" style={{ textAlign: "center" }}>
       <h1 className="header">Funny Time Machine</h1>
@@ -14,29 +45,56 @@ export default function HomePage() {
         <h4> Time period</h4>
       </div>
       <div className="container">
-        <select className="select" style={{ marginRight: "30px" }}>
-          <option>Belarus</option>
-          <option>Belgium</option>
-          <option>Netherlands</option>
-          <option>Romania</option>
-          <option>South Africa</option>
+        <select
+          onChange={(event) => setSelectedLocation(event.target.value)}
+          className="select"
+          style={{ marginRight: "30px" }}
+        >
+          {locations.map((location) => {
+            return (
+              <option value={location.id} key={location.id}>
+                {location.location}
+              </option>
+            );
+          })}
         </select>
 
-        <select className="select" style={{ marginBottom: "30px" }}>
-          <option>Before Christ</option>
-          <option>Antiquity</option>
-          <option>Middle Ages</option>
-          <option>Early Modern Period</option>
-          <option>18-19 centuries</option>
-          <option>20th century</option>
-          <option>21st century</option>
-          <option>Future</option>
+        <select
+          onChange={(event) => setselectedPeriod(event.target.value)}
+          className="select"
+          style={{ marginBottom: "30px" }}
+        >
+          {periods.map((period) => {
+            return (
+              <option value={period.id} key={period.id}>
+                {period.date}
+              </option>
+            );
+          })}
         </select>
       </div>
       <br></br>
       <div className="container">
-        <button className="button" style={{ marginRight: "30px" }}>
-          Submit
+        <button
+          onClick={(event) =>
+            console.log(
+              "location",
+              selectedLocation,
+              "  period",
+              selectedPeriod
+            )
+          }
+          className="button"
+          style={{ marginRight: "30px" }}
+        >
+          <Link
+            to={{
+              pathname: "/quiz",
+              state: { palceId: selectedLocation, periodId: selectedPeriod },
+            }}
+          >
+            Submit
+          </Link>
         </button>
         <button className="button" style={{ justifyContent: "right" }}>
           Random destination
