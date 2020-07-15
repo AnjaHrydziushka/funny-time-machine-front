@@ -20,6 +20,7 @@ export default function FactPage() {
 
     if (!factById) return <div>Loading...</div>
 
+
     return (
         <div style={{ textAlign: "center" }}>
             <h1>Fun Facts</h1>
@@ -29,6 +30,7 @@ export default function FactPage() {
                 alt="Louis Bonaparte"
             />
             <h3>Did you know that...</h3>
+
             <p>{factById.content}</p>
             <h4>Your answer was:</h4>
             <p>Bonaparte sounds like some famouse footbal player...</p>

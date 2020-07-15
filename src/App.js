@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HomePage from "./pages/homepage";
+import HomePage from "./pages/homePage/homepage";
 import QuizPage from './pages/QuizPage';
 import FactPage from './pages/FactPage';
 import { Switch, Route } from "react-router-dom";
