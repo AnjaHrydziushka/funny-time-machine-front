@@ -13,22 +13,34 @@ export default function QuizPage() {
   const dispatch = useDispatch();
   const quiz = useSelector(selectQuiz);
   const [answer, setAnswer] = useState("");
-  const [selectedQuestion, setSelectedQuestion] = useState(-1);
-  let location = useLocation();
+  // const [selectedQuestion, setSelectedQuestion] = useState(-1);
+
+  const location = useLocation();
   console.log("Quiz page params", location);
 
-  const filteredQuestions =
-    selectedQuestion == -1
-      ? quiz
-      : quiz.filter((q) => {
-          return q.id == selectedQuestion;
-        });
-  console.log("filttered questions", filteredQuestions);
+//   const filteredQuestions =
+//     selectedQuestion == -1
+//       ? quiz
+//       : quiz.filter((q) => {
+//           return q.id == selectedQuestion;
+//         });
+//   console.log("filttered questions", filteredQuestions);
 
-  const id = filteredQuestions.map((question) => {
-    return question.id;
-  });
-  console.log("ID", id);
+console.log("Quiz?", quiz)
+
+
+//   const id = filteredQuestions.map((question) => {
+//     return question.id;
+//   });
+//   console.log("ID", id);
+
+
+// const id = quiz.map((question) => {
+//   return question.id;
+// });
+// console.log("ID", id);
+
+
   const question = quiz.filter((q) => {
     if (
       q.placeId == location.state.placeId &&
@@ -39,10 +51,16 @@ export default function QuizPage() {
   });
   console.log("question", question);
 
+  const rightId = question.map((q) => {
+    return q.id
+  })
+
+  console.log("RIGHT ID", rightId)
+ 
   function submitHandler(e) {
     e.preventDefault();
 
-    dispatch(postAnswer(id, answer));
+    dispatch(postAnswer(rightId, answer));
   }
 
   useEffect(() => {
