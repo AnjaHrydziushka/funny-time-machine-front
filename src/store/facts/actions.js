@@ -8,9 +8,9 @@ function fetchedFact(data) {
 }
 
 // thunk
-export function fetchFactsById (id) {
-    return async function thunk (dispatch, getState) {
-        const response = await axios.get(`${API_URL}/facts/${id}`)
+export const fetchFactsById = () => {
+    return async function (dispatch, getState) {
+        const response = await axios.get(`${API_URL}/facts`)
         dispatch(fetchedFact(response.data.facts))
     }
 }
