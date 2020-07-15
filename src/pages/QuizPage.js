@@ -60,7 +60,7 @@ export default function QuizPage() {
         </Container>
         <Container>
           {question.map((q) => (
-            <h5>{q.question}</h5>
+            <h5 key={q.id}>{q.question}</h5>
           ))}
         </Container>
         <Container>

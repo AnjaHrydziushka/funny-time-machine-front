@@ -32,7 +32,7 @@ export default function HomePage() {
     );
   });
 
-  console.log("periodsJSX", periodsJSX);
+
   useEffect(() => {
     dispatch(fetchPlaces());
     dispatch(fetchTimePeriods());

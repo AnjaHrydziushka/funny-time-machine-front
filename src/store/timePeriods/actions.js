@@ -11,7 +11,6 @@ export const fetchTimePeriodsSucces = (timePeriods) => ({
 export const fetchTimePeriods = () => {
   return async (dispatch, getState) => {
     const response = await axios.get(`${API_URL}/timeperiods`);
-    console.log("time periods", response.data.timePeriod);
     dispatch(fetchTimePeriodsSucces(response.data.timePeriod));
   };
 };

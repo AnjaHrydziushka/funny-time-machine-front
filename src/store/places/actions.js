@@ -11,7 +11,6 @@ export const fetchPlacesSucces = (places) => ({
 export const fetchPlaces = () => {
   return async (dispatch, getState) => {
     const response = await axios.get(`${API_URL}/places`);
-    console.log("places", response.data.places);
     dispatch(fetchPlacesSucces(response.data.places));
   };
 };
