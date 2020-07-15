@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { fetchFactsById } from '../store/facts/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 export default function FactPage() {
+
+    const dispatch = useDispatch();
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(fetchFactsById(id))
+    }, [])
+
     return (
         <div style={{ textAlign: "center" }}>
             <h1>Fun Facts</h1>
