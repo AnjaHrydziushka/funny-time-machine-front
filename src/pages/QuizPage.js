@@ -1,9 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 export default function QuizPage() {
-  let location = useLocation();
-  console.log(location);
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Funny Time Machine</h1>

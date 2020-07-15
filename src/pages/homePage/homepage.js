@@ -1,39 +1,42 @@
 import React from "react";
 import "./homepage.css";
-import { apiUrl } from "../../config/constants";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPlaces } from "../../store/places/actions";
+import { selectPlaces } from "../../store/places/selectors";
+import { fetchTimePeriods } from "../../store/timePeriods/actions";
+import { selectTimePeriods } from "../../store/timePeriods/selectors";
 
 export default function HomePage() {
-  const [locations, setLocations] = useState([]);
-  const [periods, setPeriods] = useState([]);
+  const dispatch = useDispatch();
+  const places = useSelector(selectPlaces);
+  const periods = useSelector(selectTimePeriods);
+
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedPeriod, setselectedPeriod] = useState("");
 
-  async function FetchLocation() {
-    const response = await axios.get(`${apiUrl}/places`);
-    console.log("places", response.data.places);
-    setLocations(response.data.places);
-  }
-
-  async function FetchPeriod() {
-    const response = await axios.get(`${apiUrl}/timeperiods`);
-    console.log("period", response.data.timePeriod);
-    setPeriods(response.data.timePeriod);
-  }
-
-  useEffect(() => {
-    FetchLocation();
-    FetchPeriod();
-  }, []);
-
-  if (!locations || !periods)
+  const periodsJSX = periods.map((q, i) => {
     return (
-      <div>
-        <h2>Loading</h2>
-      </div>
+      <option key={i} value={q.id}>
+        {q.date}
+      </option>
     );
+  });
+
+  const placesJSX = places.map((q, i) => {
+    return (
+      <option key={i} value={q.id}>
+        {q.location}
+      </option>
+    );
+  });
+
+  console.log("periodsJSX", periodsJSX);
+  useEffect(() => {
+    dispatch(fetchPlaces());
+    dispatch(fetchTimePeriods());
+  }, [dispatch]);
 
   return (
     <div className="body" style={{ textAlign: "center" }}>
@@ -50,13 +53,8 @@ export default function HomePage() {
           className="select"
           style={{ marginRight: "30px" }}
         >
-          {locations.map((location) => {
-            return (
-              <option value={location.id} key={location.id}>
-                {location.location}
-              </option>
-            );
-          })}
+          <option>Countries</option>
+          {placesJSX}
         </select>
 
         <select
@@ -64,13 +62,8 @@ export default function HomePage() {
           className="select"
           style={{ marginBottom: "30px" }}
         >
-          {periods.map((period) => {
-            return (
-              <option value={period.id} key={period.id}>
-                {period.date}
-              </option>
-            );
-          })}
+          <option>Time period</option>
+          {periodsJSX}
         </select>
       </div>
       <br></br>
