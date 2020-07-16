@@ -60,7 +60,7 @@ export default function FactPage() {
             <h4>Your answer was:</h4>
             <p>{fact.state.answer}</p>
           </div>
-          
+
         </div>
 
       </div>

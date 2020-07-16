@@ -27,3 +27,9 @@
     flex-direction: column;
     padding-top: 5%;
 }
+
+.title {
+    color: darkred;
+    font-family: sans-serif;
+    text-align: center;
+}
