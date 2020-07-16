@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFact } from "../store/facts/selectors";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './factpage.css';
 
 export default function FactPage() {
+
   const dispatch = useDispatch();
   const facts = useSelector(selectFact);
-
   const fact = useLocation();
 
   useEffect(() => {
@@ -27,32 +28,45 @@ export default function FactPage() {
   if (!facts) return <div>Loading...</div>;
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div>
-      <h1>Fun Facts</h1>
-      {oneFact.map((fact) => {
-        return (
-          <img
-            key={fact.id}
-            src={fact.imageUrl}
-            width="300px"
-            alt="Louis Bonaparte"
-          />
-        );
-      })}
-      <h3>Did you know that...</h3>
-      {oneFact.map((fact) => {
-        return <p key={fact.id}>{fact.content}</p>;
-      })}
-      </div>
-      <div>
-      <h4>Your answer was:</h4>
-      <p>{fact.state.answer}</p>
+    <div className="top">
+
+      <h1 className="title">Fun Facts</h1>
+
+      <div className="container">
+
+        <div className="image">
+          {oneFact.map((fact) => {
+            return (
+              <img
+                key={fact.id}
+                src={fact.imageUrl}
+                width="450px"
+                alt="Louis Bonaparte"
+              />
+            );
+          })}
+        </div>
+
+        <div className="fact">
+
+          <div>
+            <h3>Did you know that...</h3>
+            {oneFact.map((fact) => {
+              return <p key={fact.id}>{fact.content}</p>;
+            })}
+          </div>
+
+          <div>
+            <h4>Your answer was:</h4>
+            <p>{fact.state.answer}</p>
+          </div>
+
+        </div>
+
       </div>
       <div>
         <Link to='/'><button>Go Back To Homepage</button></Link>
       </div>
-
     </div>
   );
 }
