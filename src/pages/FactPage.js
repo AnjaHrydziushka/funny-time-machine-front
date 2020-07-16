@@ -3,6 +3,7 @@ import { fetchFactsById } from "../store/facts/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFact } from "../store/facts/selectors";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function FactPage() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ export default function FactPage() {
 
   return (
     <div style={{ textAlign: "center" }}>
+      <div>
       <h1>Fun Facts</h1>
       {oneFact.map((fact) => {
         return (
@@ -42,9 +44,15 @@ export default function FactPage() {
       {oneFact.map((fact) => {
         return <p key={fact.id}>{fact.content}</p>;
       })}
-
+      </div>
+      <div>
       <h4>Your answer was:</h4>
       <p>{fact.state.answer}</p>
+      </div>
+      <div>
+        <Link to='/'><button>Go Back To Homepage</button></Link>
+      </div>
+
     </div>
   );
 }
