@@ -1,0 +1,28 @@
+.top {
+    text-align: center;
+    padding: 3% 3% 3% 3%;
+    width: 90%;
+    margin: auto;
+    background-color: bisque;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
+.image {
+    width: 70%;
+    position: relative;
+    margin: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fact {
+    display: flex;
+    flex-direction: column;
+}
