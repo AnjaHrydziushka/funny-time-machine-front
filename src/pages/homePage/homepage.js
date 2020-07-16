@@ -16,6 +16,19 @@ export default function HomePage() {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedPeriod, setselectedPeriod] = useState("");
 
+  const [selectedRandomLocation, setSelectedRandomLocation] = useState("");
+  const [selectedRandomPeriod, setselectedRandomPeriod] = useState("");
+
+  const randomPlace = places[Math.floor(Math.random() * places.length)];
+  const randomPeriod = periods[Math.floor(Math.random() * periods.length)];
+
+  function randomButton() {
+    const randomPlace = places[Math.floor(Math.random() * places.length)];
+    const randomPeriod = periods[Math.floor(Math.random() * periods.length)];
+    setselectedRandomPeriod(randomPeriod.id);
+    setSelectedRandomLocation(randomPlace.id);
+  }
+
   const periodsJSX = periods.map((q, i) => {
     return (
       <option key={i} value={q.id}>
@@ -32,11 +45,16 @@ export default function HomePage() {
     );
   });
 
-
   useEffect(() => {
     dispatch(fetchPlaces());
     dispatch(fetchTimePeriods());
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    if (periods.length > 0 && places.length > 0) {
+      randomButton();
+    }
+  }, [places, periods]);
 
   return (
     <div className="body" style={{ textAlign: "center" }}>
@@ -68,18 +86,7 @@ export default function HomePage() {
       </div>
       <br></br>
       <div className="container">
-        <button
-          onClick={(event) =>
-            console.log(
-              "location",
-              selectedLocation,
-              "  period",
-              selectedPeriod
-            )
-          }
-          className="button"
-          style={{ marginRight: "30px" }}
-        >
+        <button className="button" style={{ marginRight: "30px" }}>
           <Link
             to={{
               pathname: "/quiz",
@@ -92,8 +99,23 @@ export default function HomePage() {
             Submit
           </Link>
         </button>
-        <button className="button" style={{ justifyContent: "right" }}>
-          Random destination
+        <button
+          onClick={(event) => randomButton()}
+          className="button"
+          style={{ justifyContent: "right" }}
+        >
+          <Link
+            onClick={(event) => randomButton()}
+            to={{
+              pathname: "/quiz",
+              state: {
+                placeId: selectedRandomLocation,
+                timePeriodId: selectedRandomPeriod,
+              },
+            }}
+          >
+            Random destenation
+          </Link>
         </button>
       </div>
     </div>
