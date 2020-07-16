@@ -44,23 +44,38 @@ export default function QuizPage() {
 
   return (
     <>
-      <Jumbotron>
+      <Jumbotron className="back">
         <Container>
-          <h1>Funny Time Machine</h1>
+          <h1 className="glow">Funny Time Machine</h1>
         </Container>
-        <Container>
-          <h5>Can you answer a question for us?</h5>
-        </Container>
-        <Container>
+        <marquee behavior="scroll" direction="right" scrollAmount="20">
+          <h5 className="text">DO YOU KNOW THE ANSWER?</h5>
+        </marquee>
+        <div class="dot">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="q">
           {question.map((q) => (
-            <h5 key={q.id}>{q.question}</h5>
+            <h4 key={q.id}>{q.question}</h4>
           ))}
-        </Container>
+        </div>
         <Container>
           <Form>
-            <h5 className="mt-5 mb-5">Please insert your answer here</h5>
-            <Form.Group>
+            <h5 className="mt-5 mb-5" id="par">
+              Please insert your answer here
+            </h5>
+            <Form.Group className="input">
               <Form.Control
+                
                 value={answer}
                 onChange={(event) => setAnswer(event.target.value)}
                 type="text"
@@ -70,7 +85,7 @@ export default function QuizPage() {
             </Form.Group>
 
             <Form.Group className="mt-5">
-              <Button variant="primary" type="submit" onClick={submitHandler}>
+              <button className="btn" variant="primary" type="submit" onClick={submitHandler}>
                 <Link
                   to={{
                     pathname: "/facts",
@@ -81,11 +96,12 @@ export default function QuizPage() {
                     },
                   }}
                 >
-                  Submit answer
+                  Answer
                 </Link>
-              </Button>
+              </button>
             </Form.Group>
           </Form>
+          <div id="animation"></div>
         </Container>
       </Jumbotron>
     </>
