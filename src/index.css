@@ -29,6 +29,7 @@ Jumbotron {
   font-family: fantasy;
   text-shadow: 2px 2px rgb(204, 211, 111);
   color: rgb(35, 101, 201);
+  margin-top: 100px;
 }
 
 .q {

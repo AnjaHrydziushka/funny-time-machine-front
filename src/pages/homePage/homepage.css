@@ -5,6 +5,11 @@
   margin-bottom: 40px;
 }
 
+.HomePage {
+  text-align: center;
+  margin-top: 100px;
+}
+
 body {
   background-image: url("https://www.myfreetextures.com/wp-content/uploads/2013/07/old-brown-vintage-parchment-paper-texture-900x1226.jpg");
   background-position: "center";

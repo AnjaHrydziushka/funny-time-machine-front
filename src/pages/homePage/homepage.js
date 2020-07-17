@@ -54,7 +54,7 @@ export default function HomePage() {
   }, [places, periods]);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="HomePage">
       <h1 className="glitch">Funny Time Machine</h1>
       <br></br>
       <h2 className="typewriter">Where would you like to go?</h2>
