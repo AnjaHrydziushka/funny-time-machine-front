@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFact } from "../store/facts/selectors";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 import './factpage.css';
 
 export default function FactPage() {
@@ -65,7 +66,7 @@ export default function FactPage() {
 
       </div>
       <div>
-        <Link to='/'><button>Go Back To Homepage</button></Link>
+        <Link to='/'><Button>Go Back To Homepage</Button></Link>
       </div>
     </div>
   );
