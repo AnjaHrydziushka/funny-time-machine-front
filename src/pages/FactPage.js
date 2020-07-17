@@ -50,7 +50,7 @@ export default function FactPage() {
         <div className="fact">
 
           <div>
-            <h3>Did you know that...</h3>
+            <h3 className="titleText">Did you know that...</h3>
             {oneFact.map((fact) => {
               return <p key={fact.id}>{fact.content}</p>;
             })}
