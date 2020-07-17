@@ -6,7 +6,6 @@ import { postAnswer } from "../store/answers/actions";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -14,8 +13,6 @@ export default function QuizPage() {
   const dispatch = useDispatch();
   const quiz = useSelector(selectQuiz);
   const [answer, setAnswer] = useState("");
-
-  const [selectFact, setSelectFact] = useState("");
 
   const location = useLocation();
 

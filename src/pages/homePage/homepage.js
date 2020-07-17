@@ -19,9 +19,6 @@ export default function HomePage() {
   const [selectedRandomLocation, setSelectedRandomLocation] = useState("");
   const [selectedRandomPeriod, setselectedRandomPeriod] = useState("");
 
-  const randomPlace = places[Math.floor(Math.random() * places.length)];
-  const randomPeriod = periods[Math.floor(Math.random() * periods.length)];
-
   function randomButton() {
     const randomPlace = places[Math.floor(Math.random() * places.length)];
     const randomPeriod = periods[Math.floor(Math.random() * periods.length)];
@@ -48,7 +45,7 @@ export default function HomePage() {
   useEffect(() => {
     dispatch(fetchPlaces());
     dispatch(fetchTimePeriods());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (periods.length > 0 && places.length > 0) {
