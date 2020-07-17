@@ -57,20 +57,20 @@ h1 {
   margin: 0;
   line-height: 0;
 
-  animation: glitch1 2.5s infinite;
+  animation: stuter1 2.5s infinite;
 }
 
 h1:nth-child(2) {
   color: #67f3da;
-  animation: glitch2 2.5s infinite;
+  animation: stuter2 2.5s infinite;
 }
 
 h1:nth-child(3) {
   color: #f16f6f;
-  animation: glitch3 2.5s infinite;
+  animation: stuter3 2.5s infinite;
 }
 
-@keyframes glitch1 {
+@keyframes stuter1 {
   0% {
     transform: none;
     opacity: 1;
@@ -125,7 +125,7 @@ h1:nth-child(3) {
   }
 }
 
-@keyframes glitch2 {
+@keyframes stuter2 {
   0% {
     transform: none;
     opacity: 0.25;
@@ -180,7 +180,7 @@ h1:nth-child(3) {
   }
 }
 
-@keyframes glitch3 {
+@keyframes stuter3 {
   0% {
     transform: none;
     opacity: 0.25;
@@ -265,8 +265,6 @@ h1:nth-child(3) {
   }
 }
 
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-
 .button {
   text-align: center;
   font-family: monospace;
@@ -277,73 +275,6 @@ h1:nth-child(3) {
   border-radius: 20px;
   left: 50%;
   animation: border-flicker 2s linear infinite;
-}
-
-Link {
-  color: #ff00e6;
-  font-family: "Raleway", sans-serif;
-  font-size: 64px;
-  letter-spacing: 10px;
-  animation: text-flicker 3s linear infinite;
-}
-
-#offset {
-  animation: letter-flicker 2s linear infinite;
-}
-
-@keyframes text-flicker {
-  0% {
-    opacity: 0.1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  2% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  8% {
-    opacity: 0.1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  9% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  12% {
-    opacity: 0.1;
-    text-shadow: 0px 0px rgba(242, 22, 22, 1);
-  }
-  20% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  25% {
-    opacity: 0.3;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  30% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  70% {
-    opacity: 0.7;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  72% {
-    opacity: 0.2;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  77% {
-    opacity: 0.9;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  100% {
-    opacity: 0.9;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
 }
 
 @keyframes border-flicker {
@@ -386,47 +317,6 @@ Link {
   }
 }
 
-@keyframes letter-flicker {
-  0% {
-    opacity: 0.1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  2% {
-    opacity: 0.1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  4% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  19% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  21% {
-    opacity: 0.1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  23% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-
-  80% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  83% {
-    opacity: 0.4;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-  87% {
-    opacity: 1;
-    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
-  }
-}
-
 h4 {
   animation: text-shadow 1.5s ease-in-out infinite;
   font-size: 5em;
@@ -437,14 +327,6 @@ h4 {
 
 h4:hover {
   animation-play-state: paused;
-}
-
-a {
-  color: #024794;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 @keyframes text-shadow {
