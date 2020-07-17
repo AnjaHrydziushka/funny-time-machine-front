@@ -1,6 +1,6 @@
 # Funny Time Machine
 
-Click [HERE](https://peaceful-lovelace-d4e52f.netlify.app/) to check out the deployed version.
+:exclamation::exclamation:Click [HERE](https://peaceful-lovelace-d4e52f.netlify.app/) to check out the deployed version.:exclamation::exclamation:
 
 ## About the app
 
