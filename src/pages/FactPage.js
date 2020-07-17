@@ -5,7 +5,6 @@ import { selectFact } from "../store/facts/selectors";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
-import './factpage.css';
 
 export default function FactPage() {
 
@@ -31,7 +30,7 @@ export default function FactPage() {
   return (
     <div className="top">
 
-      <h1 className="title">Fun Facts</h1>
+      <h1 className="glowFact">Fun Facts</h1>
 
       <div className="container">
 
