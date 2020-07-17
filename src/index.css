@@ -210,5 +210,44 @@ Jumbotron {
   animation-duration: 2.3s; 
 } 
 
+.glowFact {
+  font-size: 60px;
+  font-family: monospace;
+  color: rgb(133, 25, 25);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.top {
+  text-align: center;
+  padding: 3% 3% 3% 3%;
+  width: 90%;
+  margin: auto;
+  background-color: bisque;
+  
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+.image {
+  width: 70%;
+  position: relative;
+  margin: 3%;
+  box-shadow: 0 14px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+}
 
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFact } from "../store/facts/selectors";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import './factpage.css';
+import { Button } from 'react-bootstrap';
 
 export default function FactPage() {
 
@@ -30,7 +30,7 @@ export default function FactPage() {
   return (
     <div className="top">
 
-      <h1 className="title">Fun Facts</h1>
+      <h1 className="glowFact">Fun Facts</h1>
 
       <div className="container">
 
@@ -65,7 +65,7 @@ export default function FactPage() {
 
       </div>
       <div>
-        <Link to='/'><button>Go Back To Homepage</button></Link>
+        <Link to='/'><Button>Go Back To Homepage</Button></Link>
       </div>
     </div>
   );
