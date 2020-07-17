@@ -57,19 +57,20 @@ export default function HomePage() {
   }, [places, periods]);
 
   return (
-    <div className="body" style={{ textAlign: "center" }}>
-      <h1 className="header">Funny Time Machine</h1>
+    <div style={{ textAlign: "center" }}>
+      <h1 className="glitch">Funny Time Machine</h1>
 
-      <h2>Where would you like to go?</h2>
+      <h2 className="typewriter">Where would you like to go?</h2>
+      <br></br>
       <div className="container">
-        <h4 style={{ marginRight: "60px" }}>Location</h4>
+        <h4 style={{ marginRight: "245px" }}>Location</h4>
         <h4> Time period</h4>
       </div>
       <div className="container">
         <select
           onChange={(event) => setSelectedLocation(event.target.value)}
           className="select"
-          style={{ marginRight: "30px" }}
+          style={{ marginRight: "145px" }}
         >
           <option>Countries</option>
           {placesJSX}
@@ -78,7 +79,6 @@ export default function HomePage() {
         <select
           onChange={(event) => setselectedPeriod(event.target.value)}
           className="select"
-          style={{ marginBottom: "30px" }}
         >
           <option>Time period</option>
           {periodsJSX}

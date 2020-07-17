@@ -5,7 +5,7 @@
   margin-bottom: 40px;
 }
 
-.body {
+body {
   background-image: url("https://www.myfreetextures.com/wp-content/uploads/2013/07/old-brown-vintage-parchment-paper-texture-900x1226.jpg");
   background-position: "center";
   background-size: "cover";
@@ -22,11 +22,464 @@
 }
 
 .select {
+  font-family: monospace;
+  width: 200px;
   height: 60px;
-  width: 120px;
+  border: 0px;
+  outline: 0px;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  color: #fff;
 }
 
+.select:focus {
+  outline: none;
+}
 button {
   width: 120px;
   height: 60px;
+}
+
+h4 {
+  position: relative;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 5em;
+  letter-spacing: 8px;
+  font-family: Snell Roundhand, cursive;
+  font-weight: 400;
+
+  margin: 0;
+  line-height: 0;
+
+  animation: glitch1 2.5s infinite;
+}
+
+h1:nth-child(2) {
+  color: #67f3da;
+  animation: glitch2 2.5s infinite;
+}
+
+h1:nth-child(3) {
+  color: #f16f6f;
+  animation: glitch3 2.5s infinite;
+}
+
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+.typewriter {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.button {
+  text-align: center;
+  font-family: monospace;
+  background-color: transparent;
+  border: 5px solid #1086e8;
+  width: 300px;
+  top: 150px;
+  border-radius: 20px;
+  left: 50%;
+  animation: border-flicker 2s linear infinite;
+}
+
+Link {
+  color: #ff00e6;
+  font-family: "Raleway", sans-serif;
+  font-size: 64px;
+  letter-spacing: 10px;
+  animation: text-flicker 3s linear infinite;
+}
+
+#offset {
+  animation: letter-flicker 2s linear infinite;
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  2% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity: 0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  25% {
+    opacity: 0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  30% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  70% {
+    opacity: 0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  72% {
+    opacity: 0.2;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  77% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+  2% {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+  4% {
+    opacity: 0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+
+  8% {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+  70% {
+    opacity: 0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+  100% {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(16, 134, 232, 0.73);
+  }
+}
+
+@keyframes letter-flicker {
+  0% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  19% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  80% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity: 0.4;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+h4 {
+  animation: text-shadow 1.5s ease-in-out infinite;
+  font-size: 5em;
+  font-weight: 900;
+  line-height: 1;
+  color: white;
+}
+
+h4:hover {
+  animation-play-state: paused;
+}
+
+a {
+  color: #024794;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@keyframes text-shadow {
+  0% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 #0c2ffb, 0 0 0 #2cfcfd, 0 0 0 #fb203b, 0 0 0 #fefc4b;
+  }
+
+  20% {
+    transform: translateY(-1em);
+    text-shadow: 0 0.125em 0 #0c2ffb, 0 0.25em 0 #2cfcfd, 0 -0.125em 0 #fb203b,
+      0 -0.25em 0 #fefc4b;
+  }
+
+  40% {
+    transform: translateY(0.5em);
+    text-shadow: 0 -0.0625em 0 #0c2ffb, 0 -0.125em 0 #2cfcfd,
+      0 0.0625em 0 #fb203b, 0 0.125em 0 #fefc4b;
+  }
+
+  60% {
+    transform: translateY(-0.25em);
+    text-shadow: 0 0.03125em 0 #0c2ffb, 0 0.0625em 0 #2cfcfd,
+      0 -0.03125em 0 #fb203b, 0 -0.0625em 0 #fefc4b;
+  }
+
+  80% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 #0c2ffb, 0 0 0 #2cfcfd, 0 0 0 #fb203b, 0 0 0 #fefc4b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
